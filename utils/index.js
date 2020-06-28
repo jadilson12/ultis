@@ -1,0 +1,71 @@
+const characters = [
+  { string: '[Á]', iso: '&Aacute;' },
+  { string: '[á]', iso: '&aacute;' },
+  { string: '[Â]', iso: '&Acirc;' },
+  { string: '[â]', iso: '&acirc;' },
+  { string: '[À]', iso: '&Agrave;' },
+  { string: '[à]', iso: '&agrave;' },
+  { string: '[Å]', iso: '&Aring;' },
+  { string: '[å]', iso: '&aring;' },
+  { string: '[Ã]', iso: '&Atilde;' },
+  { string: '[ã]', iso: '&atilde;' },
+  { string: '[Ä]', iso: '&Auml;' },
+  { string: '[ä]', iso: '&auml;' },
+  { string: '[Æ]', iso: '&AElig;' },
+  { string: '[æ]', iso: '&aelig;' },
+  { string: '[É]', iso: '&Eacute;' },
+  { string: '[é]', iso: '&eacute;' },
+  { string: '[Ê]', iso: '&Ecirc;' },
+  { string: '[ê]', iso: '&ecirc;' },
+  { string: '[È]', iso: '&Egrave;' },
+  { string: '[è]', iso: '&egrave;' },
+  { string: '[Ë]', iso: '&Euml;' },
+  { string: '[ë]', iso: '&euml;' },
+  { string: '[Ð]', iso: '&ETH;' },
+  { string: '[ð]', iso: '&eth;' },
+  { string: '[Í]', iso: '&Iacute;' },
+  { string: '[í]', iso: '&iacute;' },
+  { string: '[Î]', iso: '&Icirc;' },
+  { string: '[î]', iso: '&icirc;' },
+  { string: '[Ì]', iso: '&Igrave;' },
+  { string: '[ì]', iso: '&igrave;' },
+  { string: '[Ï]', iso: '&Iuml;' },
+  { string: '[ï]', iso: '&iuml;' },
+  { string: '[Ó]', iso: '&Oacute;' },
+  { string: '[ó]', iso: '&oacute;' },
+  { string: '[Ô]', iso: '&Ocirc;' },
+  { string: '[ô]', iso: '&ocirc;' },
+  { string: '[Ò]', iso: '&Ograve;' },
+  { string: '[ò]', iso: '&ograve;' },
+  { string: '[Ø]', iso: '&Oslash;' },
+  { string: '[ø]', iso: '&oslash;' },
+  { string: '[Õ]', iso: '&Otilde;' },
+  { string: '[õ]', iso: '&otilde;' },
+  { string: '[Ö]', iso: '&Ouml;' },
+  { string: '[ö]', iso: '&ouml;' },
+  { string: '[Ú]', iso: '&Uacute;' },
+  { string: '[ú]', iso: '&uacute;' },
+  { string: '[Û]', iso: '&Ucirc;' },
+  { string: '[û]', iso: '&ucirc;' },
+  { string: '[Ù]', iso: '&Ugrave;' },
+  { string: '[ù]', iso: '&ugrave;' },
+  { string: '[Ü]', iso: '&Uuml;' },
+  { string: '[ü]', iso: '&uuml;' },
+  { string: '[Ç]', iso: '&Ccedil;' },
+  { string: '[ç]', iso: '&ccedil;' },
+  { string: '[Ñ]', iso: '&Ntilde;' },
+  { string: '[ñ]', iso: '&ntilde;' },
+  { string: '[<]', iso: '&lt;' },
+  { string: '[>]', iso: '&gt;' },
+];
+
+function isoToUtf8(text) {
+  text = text.toLowerCase();
+  characters.map((el) => {
+    text = text.replace(new RegExp(el.string, 'gi'), el.iso);
+  });
+
+  return text.toLowerCase();
+}
+
+console.log(isoToUtf8('Misnitério do Coração'));
